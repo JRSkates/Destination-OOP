@@ -2,8 +2,8 @@ const Bag = require("../../classes/Bag.js");
 const Person = require("../../classes/Person.js");
 
 describe("Bag Class", () => {
-    const person = new Person("Jack")
     const bag = new Bag(45, 1, null);
+    const person = new Person("Jack", "New York")
 
     it("created a bag instance", () => {
         expect(bag.weight).toBe(45)
@@ -18,5 +18,6 @@ describe("Bag Class", () => {
         expect(bag.getOwner()).toBe(null)
         bag.assignOwner(person)
         expect(bag.getOwner()).toBe(person)
+        expect(bag.getOwner()).toBeInstanceOf(Person)
     })
 })
